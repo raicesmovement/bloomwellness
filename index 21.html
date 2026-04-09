@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom Wellness LLC</title>
+<meta property="og:title" content="Bloom Wellness LLC">
+<meta property="og:description" content="A holistic wellness and community movement rooted in the truth that our communities already hold the tools we need.">
+<meta property="og:image" content="https://bloomwellnessllc.org/Color-round-clear.png">
+<meta property="og:url" content="https://bloomwellnessllc.org">
+<link rel="icon" type="image/png" href="Color-round-clear.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --amber:#E8941A;--amber-light:#F5C96A;
+  --sage-dark:#4A6B5E;--sage-light:#C4D5CC;
+  --taupe:#B5A898;--taupe-light:#EDE8E2;
+  --cream:#FAF7F2;--ink:#1A1714;--ink-soft:#3D3830;--stone:#8C8278;
+}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;background:rgba(250,247,242,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(181,168,152,0.25);}
+.nav-wordmark{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);}
+.nav-wordmark span{font-size:0.75rem;color:var(--stone);}
+nav ul{display:flex;gap:1.75rem;list-style:none;flex-wrap:wrap;}
+nav a{font-size:0.82rem;letter-spacing:0.13em;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color 0.2s;}
+nav a:hover{color:var(--ink);}
+.nav-ig{color:var(--amber)!important;}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;padding-top:5rem;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;top:0;right:0;width:48%;height:100%;background:transparent;z-index:0;}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 3.5rem 5rem 4rem;position:relative;z-index:2;}
+.eyebrow{display:flex;align-items:center;gap:0.75rem;font-size:0.82rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:1.75rem;}
+.eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--sage-dark);}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:300;line-height:1.07;color:var(--ink);margin-bottom:1.5rem;}
+h1 em{font-style:italic;color:var(--amber);}
+.hero-desc{font-size:1.08rem;line-height:1.9;font-weight:300;color:var(--ink-soft);max-width:40ch;margin-bottom:0.75rem;}
+.hero-founded{font-size:0.85rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:2.5rem;}
+.cta-row{display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;}
+.btn{display:inline-block;padding:0.85rem 2.25rem;font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;}
+.btn-solid{background:var(--ink);color:var(--cream);}
+.btn-solid:hover{background:var(--amber);}
+.btn-outline{background:transparent;color:var(--ink-soft);border-bottom:1px solid var(--taupe);padding-left:0;padding-right:0;}
+.btn-outline:hover{color:var(--amber);border-color:var(--amber);}
+.hero-right{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
+.logo-hero{width:min(480px,90%);animation:floatLogo 6s ease-in-out infinite;display:block;object-fit:contain;}
+@keyframes floatLogo{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+
+/* STRIP */
+.strip{background:var(--ink);color:var(--cream);padding:1rem 0;overflow:hidden;}
+.strip-inner{display:flex;gap:3rem;animation:scrollStrip 30s linear infinite;white-space:nowrap;align-items:center;}
+@keyframes scrollStrip{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.strip-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;font-weight:300;flex-shrink:0;}
+.strip-dot{color:var(--amber);flex-shrink:0;}
+
+/* TYPOGRAPHY */
+.section-label{font-size:0.82rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:1.25rem;}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.2vw,2.8rem);font-weight:300;line-height:1.2;color:var(--ink);margin-bottom:1.5rem;}
+h2 em{font-style:italic;color:var(--amber);}
+.body-p{font-size:1.05rem;line-height:1.9;font-weight:300;color:var(--ink-soft);margin-bottom:1rem;}
+.pull-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;font-weight:300;color:var(--amber);line-height:1.5;margin:1.5rem 0;border-left:2px solid var(--amber-light);padding-left:1.25rem;}
+
+/* MISSION */
+.mission{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;}
+.mission-visual{background:var(--taupe-light);display:flex;align-items:center;justify-content:center;padding:4rem;position:relative;overflow:hidden;}
+.mission-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(232,148,26,0.1) 0%,transparent 70%);}
+.mission-logo{width:min(220px,70%);opacity:0.9;position:relative;z-index:1;display:block;object-fit:contain;}
+.mission-text{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;}
+
+/* PILLARS */
+.pillars-section{padding:5.5rem 4rem;background:var(--cream);text-align:center;}
+.pillars-section .sub{font-size:1rem;color:var(--stone);font-weight:300;max-width:50ch;margin:0.75rem auto 3.5rem;}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:860px;margin:0 auto;}
+.pillar-card{padding:2.5rem 2rem;border:1px solid rgba(181,168,152,0.4);text-align:left;}
+.pillar-glyph{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;font-style:italic;color:var(--amber);line-height:1;margin-bottom:1rem;}
+.pillar-card h3{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--ink);margin-bottom:0.6rem;}
+.pillar-card p{font-size:0.97rem;line-height:1.8;font-weight:300;color:var(--stone);}
+
+/* GATHERINGS */
+.gatherings{background:var(--ink);color:var(--cream);padding:6rem 4rem;}
+.gatherings-top{max-width:620px;margin-bottom:4rem;}
+.gatherings-top .section-label{color:var(--amber-light);}
+.gatherings-top h2{color:var(--cream);margin-bottom:1rem;}
+.gatherings-top p{font-size:1rem;line-height:1.9;font-weight:300;color:rgba(250,247,242,0.65);}
+.event-feature{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;margin-bottom:4.5rem;padding-bottom:4.5rem;border-bottom:1px solid rgba(255,255,255,0.07);}
+.event-feature.reverse .event-feature-img{order:2;}
+.event-feature.reverse .event-feature-text{order:1;}
+.event-feature-img{overflow:hidden;}
+.event-feature-img > img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);}
+.photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;}
+.photo-pair img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid rgba(255,255,255,0.08);}
+
+/* Hover swap */
+.img-hover-swap{position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);cursor:pointer;}
+.img-hover-swap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity 0.45s ease;border:none;}
+.img-hover-swap .img-hover-top{opacity:1;}
+.img-hover-swap .img-hover-bottom{opacity:0;}
+.img-hover-swap:hover .img-hover-top{opacity:0;}
+.img-hover-swap:hover .img-hover-bottom{opacity:1;}
+.hover-hint{position:absolute;bottom:0.6rem;right:0.75rem;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(250,247,242,0.5);background:rgba(26,23,20,0.6);padding:0.2rem 0.5rem;pointer-events:none;transition:opacity 0.3s;z-index:2;}
+.img-hover-swap:hover .hover-hint{opacity:0;}
+
+.event-date{font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber-light);margin-bottom:0.85rem;}
+.event-feature-text h4{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:400;font-style:italic;color:var(--cream);line-height:1.15;margin-bottom:0.6rem;}
+.event-tag-pill{display:inline-block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,247,242,0.55);border:1px solid rgba(255,255,255,0.18);padding:0.35rem 0.85rem;margin-bottom:0.85rem;}
+.event-feature-text p{font-size:1rem;line-height:1.85;font-weight:300;color:rgba(250,247,242,0.7);}
+.bilingual{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--amber-light);margin-top:0.85rem;display:block;}
+
+/* Press badge */
+.press-mention{display:inline-flex;align-items:center;gap:0.6rem;margin-top:1rem;padding:0.5rem 0.9rem;border:1px solid rgba(245,201,106,0.3);background:rgba(245,201,106,0.05);}
+.press-mention a{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber-light);text-decoration:none;transition:color 0.2s;}
+.press-mention a:hover{color:var(--amber);}
+
+/* PAST GRID */
+.past-header{margin-bottom:1.75rem;}
+.past-header .section-label{color:var(--amber-light);}
+.past-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);}
+.past-card{background:var(--ink);padding:1.5rem 1.25rem;border:1px solid rgba(255,255,255,0.06);transition:border-color 0.2s;}
+.past-card:hover{border-color:rgba(232,148,26,0.35);}
+.past-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:var(--cream);margin-bottom:0.4rem;}
+.past-card p{font-size:0.9rem;line-height:1.7;font-weight:300;color:rgba(250,247,242,0.5);}
+
+/* PODCAST */
+.podcast-section{background:var(--taupe-light);padding:5rem 4rem;}
+.podcast-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:200px 1fr;gap:3.5rem;align-items:center;}
+.podcast-art{width:200px;height:200px;object-fit:cover;display:block;border:1px solid rgba(181,168,152,0.4);flex-shrink:0;}
+.podcast-text .section-label{margin-bottom:1rem;}
+.podcast-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.5vw,2.4rem);font-weight:300;line-height:1.2;color:var(--ink);margin-bottom:0.35rem;}
+.podcast-title em{font-style:italic;color:var(--amber);}
+.podcast-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--stone);margin-bottom:1.25rem;}
+.podcast-status{display:inline-block;font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--stone);border:1px solid rgba(181,168,152,0.5);padding:0.3rem 0.85rem;margin-bottom:1.25rem;}
+.podcast-text p{font-size:1rem;line-height:1.9;font-weight:300;color:var(--ink-soft);margin-bottom:1.5rem;}
+.btn-spotify{display:inline-flex;align-items:center;gap:0.6rem;padding:0.75rem 1.75rem;background:#1DB954;color:#fff;font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:opacity 0.2s;}
+.btn-spotify:hover{opacity:0.85;}
+
+/* VENTURES */
+.ventures{padding:6rem 4rem;background:var(--cream);}
+.ventures-header{text-align:center;margin-bottom:3.5rem;}
+.ventures-header h2{margin-bottom:0.75rem;}
+.ventures-header p{font-size:1rem;color:var(--stone);font-weight:300;max-width:48ch;margin:0 auto;}
+.ventures-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:860px;margin:0 auto;}
+.venture-card{border:1px solid rgba(181,168,152,0.45);padding:2.5rem 2.25rem;background:var(--cream);transition:border-color 0.25s,transform 0.25s;text-decoration:none;color:inherit;display:block;}
+.venture-card:hover{border-color:var(--amber);transform:translateY(-3px);}
+.venture-tag-sm{font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem;}
+.venture-card h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:0.75rem;}
+.venture-card h3 em{font-style:italic;}
+.venture-card p{font-size:1rem;line-height:1.8;font-weight:300;color:var(--stone);}
+.venture-link{display:inline-block;margin-top:1.5rem;font-size:0.85rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px;transition:color 0.2s,border-color 0.2s;}
+.venture-card:hover .venture-link{color:var(--amber);border-color:var(--amber);}
+
+/* FOUNDER */
+.founder-section{background:var(--ink);padding:6rem 4rem;}
+.founder-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:4rem;align-items:start;}
+.founder-emblem{width:160px;height:160px;border-radius:50%;background:var(--taupe-light);border:2px solid rgba(181,168,152,0.35);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.founder-emblem img{width:100%;height:100%;object-fit:contain;display:block;}
+.founder-name{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;line-height:1.1;color:var(--cream);margin-bottom:0.25rem;}
+.founder-name em{font-style:italic;color:var(--amber);}
+.founder-title-line{font-size:0.85rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage-light);margin-bottom:1.5rem;}
+.founder-section .section-label{color:var(--amber-light);}
+.founder-section .body-p{color:rgba(250,247,242,0.72);}
+
+/* FOOTER */
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.06);padding:2.5rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--cream);}
+.footer-links{display:flex;gap:1.75rem;flex-wrap:wrap;}
+.footer-links a{font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,247,242,0.5);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--amber);}
+.footer-copy{font-size:0.82rem;color:rgba(250,247,242,0.3);font-weight:300;width:100%;text-align:center;border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem;margin-top:0.5rem;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.hero-left>*{opacity:0;animation:fadeUp 0.8s ease forwards;}
+.hero-left>*:nth-child(1){animation-delay:0.1s;}
+.hero-left>*:nth-child(2){animation-delay:0.25s;}
+.hero-left>*:nth-child(3){animation-delay:0.4s;}
+.hero-left>*:nth-child(4){animation-delay:0.5s;}
+.hero-left>*:nth-child(5){animation-delay:0.62s;}
+.hero-right{animation:fadeUp 0.9s 0.4s ease forwards;opacity:0;}
+
+/* =====================
+   MOBILE STYLES
+   ===================== */
+@media (max-width: 768px) {
+
+  /* Nav — hide links, show wordmark only */
+  nav{padding:1rem 1.5rem;flex-wrap:wrap;gap:0.5rem;}
+  nav ul{gap:0.85rem;justify-content:flex-end;}
+  nav a{font-size:0.72rem;}
+  .nav-ig{display:none;} /* hide IG in nav on mobile — it's in the footer */
+
+  /* Hero — stack vertically, logo first */
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:4.5rem;}
+  .hero-bg{display:none;}
+  .hero-right{order:-1;padding:2.5rem 2rem 0;justify-content:center;}
+  .logo-hero{width:min(220px,60%);}
+  .hero-left{padding:2rem 1.5rem 3rem;}
+  .hero-desc{max-width:100%;}
+
+  /* Mission — stack */
+  .mission{grid-template-columns:1fr;min-height:auto;}
+  .mission-visual{padding:3rem 2rem;min-height:260px;}
+  .mission-text{padding:2.5rem 1.5rem;}
+
+  /* Pillars — single column */
+  .pillars-section{padding:3.5rem 1.5rem;}
+  .pillars-grid{grid-template-columns:1fr;max-width:100%;}
+
+  /* Gatherings — stack */
+  .gatherings{padding:3.5rem 1.5rem;}
+  .event-feature{grid-template-columns:1fr;gap:1.5rem;margin-bottom:3rem;padding-bottom:3rem;}
+  .event-feature.reverse .event-feature-img{order:0;}
+  .event-feature.reverse .event-feature-text{order:0;}
+  .event-feature-text h4{font-size:1.75rem;}
+
+  /* Photo pairs — keep side by side but smaller */
+  .photo-pair{gap:0.35rem;}
+
+  /* Hover swap — tap to toggle on mobile */
+  .hover-hint{font-size:0.65rem;}
+
+  /* Past grid — 2 columns on mobile */
+  .past-grid{grid-template-columns:repeat(2,1fr);}
+
+  /* Podcast — stack */
+  .podcast-section{padding:3.5rem 1.5rem;}
+  .podcast-inner{grid-template-columns:1fr;gap:2rem;text-align:center;}
+  .podcast-art{width:140px;height:140px;margin:0 auto;}
+
+  /* Ventures — stack */
+  .ventures{padding:3.5rem 1.5rem;}
+  .ventures-grid{grid-template-columns:1fr;}
+
+  /* Founder — stack */
+  .founder-section{padding:3.5rem 1.5rem;}
+  .founder-inner{grid-template-columns:1fr;gap:2rem;text-align:center;}
+  .founder-emblem{margin:0 auto;}
+
+  /* Footer — stack centered */
+  footer{padding:2rem 1.5rem;flex-direction:column;align-items:center;text-align:center;}
+  .footer-links{justify-content:center;gap:1rem;}
+  .footer-links a{font-size:0.75rem;}
+}
+
+/* Touch-friendly hover swap for mobile */
+@media (hover: none) {
+  .img-hover-swap:active .img-hover-top{opacity:0;}
+  .img-hover-swap:active .img-hover-bottom{opacity:1;}
+  .hover-hint{content:'tap to see the room';}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wordmark">Bloom Wellness <span>LLC</span></div>
+  <ul>
+    <li><a href="#mission">Our Story</a></li>
+    <li><a href="#gatherings">Gatherings</a></li>
+    <li><a href="#podcast">Podcast</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#founder">Founder</a></li>
+    <li><a class="nav-ig" href="https://instagram.com/bloomwellness.llc" target="_blank">@bloomwellness.llc</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-left">
+    <div class="eyebrow">Mind · Body · Soul</div>
+    <h1>There is <em>power</em><br>in community.</h1>
+    <p class="hero-desc">Bloom Wellness is a community movement rooted in an ancient truth — everything we need to heal, we already carry — we just need space to find each other.</p>
+    <div class="hero-founded">Est. Fall 2020 · Los Angeles, California</div>
+    <div class="cta-row">
+      <a href="#gatherings" class="btn btn-solid">Our Gatherings</a>
+      <a href="#mission" class="btn btn-outline">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="logo-hero" src="Color-round-clear.png" alt="Bloom Wellness LLC"/>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-inner">
+    <span class="strip-text">Community</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Mente · Cuerpo · Alma</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Go within</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Holistic healing</span><span class="strip-dot">✦</span>
+    <span class="strip-text">BIPOC empowerment</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Gatherings &amp; platicas</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Ancestral practices</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Radical honesty</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Authentic connection</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Community</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Mente · Cuerpo · Alma</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Go within</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Holistic healing</span><span class="strip-dot">✦</span>
+    <span class="strip-text">BIPOC empowerment</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Gatherings &amp; platicas</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Ancestral practices</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Radical honesty</span><span class="strip-dot">✦</span>
+    <span class="strip-text">Authentic connection</span><span class="strip-dot">✦</span>
+  </div>
+</div>
+
+<section class="mission" id="mission">
+  <div class="mission-visual">
+    <img class="mission-logo" src="Color-square-clear.png" alt="Bloom Wellness"/>
+  </div>
+  <div class="mission-text">
+    <div class="section-label">Our Story</div>
+    <h2>A safe container<br>for <em>growth</em> and healing.</h2>
+    <p class="body-p">Bloom Wellness was established in the Fall of 2020 to create a safe space for womxn to relate, process, connect, and learn from one another. As the community grew, so did the mission — now centering all BIPOC, uplifting voices, and building real opportunities for connection and collaboration.</p>
+    <div class="pull-quote">"Go within and trust that collectively we have the tools and links to resources to address our needs."</div>
+    <p class="body-p">We promote a holistic approach to healing — mind, body, and soul — as a sustainable foundation for lasting growth. We don't offer quick fixes. We build deep roots.</p>
+  </div>
+</section>
+
+<section class="pillars-section">
+  <div class="section-label">The foundation</div>
+  <h2>Rooted in <em>three</em> pillars</h2>
+  <p class="sub">Every gathering, every connection at Bloom Wellness comes back to this.</p>
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <div class="pillar-glyph">I</div>
+      <h3>Mind</h3>
+      <p>Emotional wellness through meaningful conversation, community, and spaces where we process and learn from one another.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-glyph">II</div>
+      <h3>Body</h3>
+      <p>Movement, presence, and embodiment — honoring the physical self as inseparable from our healing journey.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-glyph">III</div>
+      <h3>Soul</h3>
+      <p>Ancestral reverence and spiritual grounding — a bridge back to the practices and wisdom that were always ours.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gatherings" id="gatherings">
+  <div class="gatherings-top">
+    <div class="section-label">In community we gather</div>
+    <h2>Gatherings &amp; <em>special events</em></h2>
+    <p>Each Bloom Wellness event is its own moment — intentional, one-of-a-kind, and rooted in what the community actually needs. These are not typical events.</p>
+  </div>
+
+  <!-- A Toda Madre — hover: flyer → group photo -->
+  <div class="event-feature">
+    <div class="event-feature-img">
+      <div class="img-hover-swap">
+        <img class="img-hover-top" src="toda-madre.png" alt="A Toda Madre flyer"/>
+        <img class="img-hover-bottom" src="toda-madre-photo.png" alt="A Toda Madre gathering"/>
+        <span class="hover-hint">hover to see the room</span>
+      </div>
+    </div>
+    <div class="event-feature-text">
+      <div class="event-date">May 3, 2025 · 1pm–3:30pm</div>
+      <h4>A Toda Madre</h4>
+      <div class="event-tag-pill">Mother's Day Gathering</div>
+      <p>No es un evento típico del Día de las Madres — esto es sagrado, tierno y protegido. A gathering to honor the mothers, the motherless, and every iteration of the feminine that has held, healed, and carried.</p>
+      <span class="bilingual">esto es sagrado, tierno y protegido.</span>
+    </div>
+  </div>
+
+  <!-- Karaoke Party -->
+  <div class="event-feature reverse">
+    <div class="event-feature-img"><img src="karaoke-flyer.png" alt="Karaoke Party"/></div>
+    <div class="event-feature-text">
+      <div class="event-date">July 25, 2025 · 7pm</div>
+      <h4>Karaoke Party!</h4>
+      <div class="event-tag-pill">Casa de Healing Event · Hosted by Wendy</div>
+      <p>A Casa de Healing gathering where the medicine is music, laughter, and singing your heart out to your favorite tunes. Joy as community practice. Voice as healing. Come as you are.</p>
+      <span class="bilingual">¡Ven a ejercitar ese chakra de la garganta!</span>
+    </div>
+  </div>
+
+  <!-- Qué Padre -->
+  <div class="event-feature">
+    <div class="event-feature-img"><img src="que-padre.png" alt="Qué Padre"/></div>
+    <div class="event-feature-text">
+      <div class="event-date">June 15, 2024 · 11am–2pm</div>
+      <h4>Qué Padre</h4>
+      <div class="event-tag-pill">Father's Day · In collaboration with @sanasanacolitadtrauma</div>
+      <p>A healing collaboration between father and daughter — and a space for every kind of father figure in our community. Intergenerational, bilingual, and full of heart.</p>
+      <span class="bilingual">¡Una colaboración de sanación entre padre e hija, bien padre!</span>
+    </div>
+  </div>
+
+  <!-- La Cultura Cura -->
+  <div class="event-feature reverse">
+    <div class="event-feature-img"><img src="cultura-cura-flyer.png" alt="La Cultura Cura Festival"/></div>
+    <div class="event-feature-text">
+      <div class="event-date">2025 &amp; 2026 · Lynwood, CA</div>
+      <h4>La Cultura Cura Festival</h4>
+      <div class="event-tag-pill">Community Partnership · Lugo Elementary · Somos Medicina</div>
+      <p>A full-day wellness festival at Lugo Elementary — free and open to all families. Workshops, sound bath, reiki, healing foods, and community. Wendy has facilitated Inner Child Activities both years, holding space for the youngest and oldest in the room at once.</p>
+      <span class="bilingual">Somos medicina.</span>
+    </div>
+  </div>
+
+  <!-- Restorative Circle — LA Times -->
+  <div class="event-feature">
+    <div class="event-feature-img"><img src="restorative-circle-photo.png" alt="Restorative Circle at Fullerton Museum Women's Festival"/></div>
+    <div class="event-feature-text">
+      <div class="event-date">July 22, 2023 · Fullerton, CA</div>
+      <h4>Restorative Circle</h4>
+      <div class="event-tag-pill">Fullerton Museum Center · Women's Festival</div>
+      <p>Women Healing Ourselves through Conversation — a restorative circle co-led by Wendy Guzman and educator Danielle Nava-Mijares at the Fullerton Museum Center Women's Festival. Live performances, guest speakers, and a room full of women choosing themselves.</p>
+      <span class="bilingual">Sanar juntas es un acto radical.</span>
+      <div class="press-mention">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(245,201,106,0.8)" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        <a href="https://www.latimes.com/socal/daily-pilot/entertainment/story/2023-07-19/fullerton-museum-center-looks-to-the-wisdom-of-older-women" target="_blank">As featured in the LA Times · Daily Pilot</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Truth Tuesday SoCal — Orange -->
+  <div class="event-feature reverse">
+    <div class="event-feature-img">
+      <div class="photo-pair">
+        <img src="hike-socal-orange-flyer.png" alt="Truth Tuesday Hike Orange County flyer"/>
+        <img src="hike-socal-orange.png" alt="Truth Tuesday Hike Orange County group photo"/>
+      </div>
+    </div>
+    <div class="event-feature-text">
+      <div class="event-date">May 25, 2025 · Orange, CA</div>
+      <h4>Truth Tuesday Community Hike — Orange County</h4>
+      <div class="event-tag-pill">SoCal Edition · Tongva &amp; Acjachemen Territory</div>
+      <p>Community on the move — hiking as healing, connection as medicine. Truth Tuesday brought folks together on the trails of Orange County, honoring the land and each other with every step.</p>
+      <span class="bilingual">El movimiento también es medicina.</span>
+    </div>
+  </div>
+
+  <!-- Truth Tuesday SoCal — Altadena -->
+  <div class="event-feature">
+    <div class="event-feature-img">
+      <div class="photo-pair">
+        <img src="hike-socal-altadena-flyer.png" alt="Truth Tuesday Hike Altadena flyer"/>
+        <img src="hike-socal-altadena-photo.png" alt="Truth Tuesday Hike Altadena group photo"/>
+      </div>
+    </div>
+    <div class="event-feature-text">
+      <div class="event-date">May 26, 2024 · Altadena, CA</div>
+      <h4>Truth Tuesday Community Hike — Altadena</h4>
+      <div class="event-tag-pill">SoCal Edition · Tongva Territory</div>
+      <p>Into the mountains above Altadena — a community moving together through the San Gabriels, rooted in place, in each other, and in the healing that happens when we walk side by side.</p>
+      <span class="bilingual">Caminamos juntos, sanamos juntos.</span>
+    </div>
+  </div>
+
+  <!-- Truth Tuesday NorCal -->
+  <div class="event-feature reverse">
+    <div class="event-feature-img">
+      <div class="photo-pair">
+        <img src="hike-norcal-flyer.png" alt="Truth Tuesday Hike NorCal flyer"/>
+        <img src="hike-norcal-trail.png" alt="Truth Tuesday NorCal trail photo"/>
+      </div>
+    </div>
+    <div class="event-feature-text">
+      <div class="event-date">May 27, 2023 · Sequoia Bayview Trail, NorCal</div>
+      <h4>Truth Tuesday Community Hike — NorCal Edition</h4>
+      <div class="event-tag-pill">Ramaytush Ohlone &amp; Coast Miwok Territory</div>
+      <p>Took the movement north — hiking through old growth redwoods on Ramaytush Ohlone and Coast Miwok land. Sacred ground, sacred community.</p>
+      <span class="bilingual">En movimiento, nos encontramos.</span>
+    </div>
+  </div>
+
+  <!-- Women's Self-Defense -->
+  <div class="event-feature">
+    <div class="event-feature-img">
+      <div class="photo-pair">
+        <img src="self-defense-flyer.png" alt="Women's Self-Defense flyer"/>
+        <img src="self-defense-photo.png" alt="Self-Defense community photo"/>
+      </div>
+    </div>
+    <div class="event-feature-text">
+      <div class="event-date">April 3, 2021 · 10:30am–Noon</div>
+      <h4>Women's Self-Defense Seminar</h4>
+      <div class="event-tag-pill">With Gomez Jiu-Jitsu · Alchemy Fit Lab · Bilingual</div>
+      <p>Taught by Professor Carlos and Coach Julie Gomez of Gomez Jiu-Jitsu, presented in both Spanish and English — because accessibility is non-negotiable. A room full of women learning to feel safer in their bodies. One Wendy would gladly host again.</p>
+      <span class="bilingual">Bilingüe. Accesible. Para todas.</span>
+    </div>
+  </div>
+
+  <!-- Thriller Dance Workshop -->
+  <div class="event-feature reverse">
+    <div class="event-feature-img">
+      <div class="photo-pair">
+        <img src="thriller-flyer.png" alt="Thriller Dance Workshop flyer"/>
+        <img src="thriller-photo.png" alt="Thriller Dance Workshop photo"/>
+      </div>
+    </div>
+    <div class="event-feature-text">
+      <div class="event-date">October 24, 2021 · 11am–1pm</div>
+      <h4>Thriller Dance Workshop</h4>
+      <div class="event-tag-pill">In collaboration with @DaliaDancePro · Alchemy Fit Lab</div>
+      <p>Joy as healing. Movement as medicine. In collaboration with Dalia Dance, this Halloween workshop brought the community together to learn the iconic Thriller routine — costumes encouraged, judgment not.</p>
+      <span class="bilingual">Porque el baile también sana.</span>
+    </div>
+  </div>
+
+  <div class="past-header">
+    <div class="section-label">A few more moments from the archive</div>
+  </div>
+  <div class="past-grid">
+    <div class="past-card">
+      <div class="past-title">Somatic Meets Childplay</div>
+      <p>Hula hoops, hammocks, and bubbles — somatic healing through mindful movement, breath, and the wisdom of play.</p>
+    </div>
+    <div class="past-card">
+      <div class="past-title">Joshua Tree Retreat</div>
+      <p>A desert retreat for friends and family — intentional rest, open sky, and stillness that does its own healing work.</p>
+    </div>
+    <div class="past-card">
+      <div class="past-title">Women's Retreat · Lucerne Valley</div>
+      <p>A 2022 retreat — sacred space for women to exhale, connect, and be held by community.</p>
+    </div>
+    <div class="past-card">
+      <div class="past-title">Brujita Experience</div>
+      <p>Hosted for friends and family initially, then again in collaboration with two other energy workers. Magic is better shared.</p>
+    </div>
+    <div class="past-card">
+      <div class="past-title">Kangoo Jumps Intro</div>
+      <p>Intro Alchemy Jumps — a joyful space to try something new and move without judgment.</p>
+    </div>
+    <div class="past-card">
+      <div class="past-title">Whittier Walk for Wellness</div>
+      <p>Community ambassador — promotion, content creation, and showing up for neighborhood wellness.</p>
+    </div>
+    <div class="past-card">
+      <div class="past-title">Vendor Pop-Up · Whittier</div>
+      <p>Full event production for a local business: vendors, promo materials, setup and breakdown — start to finish.</p>
+    </div>
+    <div class="past-card">
+      <div class="past-title">Behind the Scenes</div>
+      <p>Supporting with: Invoicing systems, connections, quiet support for BIPOC entrepreneurs and practitioners. Community care without a flyer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="podcast-section" id="podcast">
+  <div class="podcast-inner">
+    <img class="podcast-art" src="truth-tuesday.jpeg" alt="Truth Tuesday Podcast"/>
+    <div class="podcast-text">
+      <div class="section-label">On the airwaves</div>
+      <div class="podcast-title">Truth <em>Tuesday</em></div>
+      <div class="podcast-sub">Liberation through Radical Honesty</div>
+      <div class="podcast-status">Currently on hiatus</div>
+      <p>Co-hosted by Wendy (Founder, Bloom Wellness LLC) and Cynthia (Liberation Life Coach) — a podcast created as a homage to the journey we call life. Truth Tuesday delves into the depths of polarity, first-gen experiences, and the personal truths that set us free. Join us wherever you listen to podcasts.</p>
+      <a class="btn-spotify" href="https://open.spotify.com/show/15lFKatSPXPSThWjIT8If9" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        Listen on Spotify
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="ventures" id="ventures">
+  <div class="ventures-header">
+    <div class="section-label">Under the Bloom umbrella</div>
+    <h2>Our <em>ventures</em></h2>
+    <p>Two spirit-led projects, one shared root. Each a different expression of intentional, community-centered living.</p>
+  </div>
+  <div class="ventures-grid">
+    <a class="venture-card" href="https://ascensionera.etsy.com" target="_blank">
+      <div class="venture-tag-sm">Spirit-led apparel + energy healing · @ascensioneraofficial</div>
+      <h3>Ascension<br><em>Era</em></h3>
+      <p>Wearable philosophy for those doing the real work — shadow work, ancestral healing, and conscious living. Energy healing sessions and platicas also live here. No guru culture. No bypassing. Just truth.</p>
+      <div class="venture-link">Visit the shop →</div>
+    </a>
+    <a class="venture-card" href="https://raicesmovement.org" target="_blank">
+      <div class="venture-tag-sm">Bilingual walking community · La Mirada, CA</div>
+      <h3>Raíces<br><em>Movement</em></h3>
+      <p>A bilingual walking community building connection through movement, culture, and shared ground. Community care as a radical, everyday act.</p>
+      <div class="venture-link">Learn more →</div>
+    </a>
+  </div>
+</section>
+
+<section class="founder-section" id="founder">
+  <div class="founder-inner">
+    <div>
+      <div class="founder-emblem">
+        <img src="Color-round-clear.png" alt="Bloom Wellness"/>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">Founder</div>
+      <div class="founder-name">Wendy <em>Guzman</em></div>
+      <div class="founder-title-line">Founder · Bloom Wellness LLC · @bloomwellness.llc</div>
+      <p class="body-p">A community builder, wellness advocate, connector, and bridge-maker rooted in Los Angeles. Wendy founded Bloom Wellness in Fall 2020 out of a personal healing journey and a deep conviction that our communities already hold the wisdom and resources we need — we just need the space to find each other.</p>
+      <p class="body-p">She has spent the years since building with intention: retreats in Joshua Tree and Lucerne Valley, bilingual community gatherings, somatic movement demos, dance clinics, self-defense workshops, and multi-year partnerships with schools and community organizations. She has also served as a quiet connector and behind-the-scenes supporter for local entrepreneurs and fellow practitioners — because community care doesn't always have a flyer.</p>
+      <p class="body-p">Bloom Wellness is currently in an intentional season of slowdown. Wendy works full-time and tends to this work with the care it deserves — one long-term coaching client, select community collaborations, and showing up where it matters most. That is not a limitation. That is integrity.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Bloom Wellness LLC</div>
+  <div class="footer-links">
+    <a href="https://instagram.com/bloomwellness.llc" target="_blank">@bloomwellness.llc</a>
+    <a href="https://open.spotify.com/show/15lFKatSPXPSThWjIT8If9" target="_blank">Truth Tuesday</a>
+    <a href="https://ascensionera.etsy.com" target="_blank">Ascension Era</a>
+    <a href="https://raicesmovement.org" target="_blank">Raíces Movement</a>
+    <a href="mailto:wendy@bloomwellnessllc.org">wendy@bloomwellnessllc.org</a>
+  </div>
+  <div class="footer-copy">© 2026 Bloom Wellness LLC · Los Angeles, California · bloomwellnessllc.org · Est. Fall 2020</div>
+</footer>
+
+</body>
+</html>
